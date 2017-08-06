@@ -34,9 +34,7 @@ func extractKanmusu(swf: URL, to dir: URL) throws {
         "17,19",
         swf.path
     ]
-    
-    process.environment = ["LC_ALL": "ja_JP.utf8"]
-    
+        
     process.launch()
     
     process.waitUntilExit()
