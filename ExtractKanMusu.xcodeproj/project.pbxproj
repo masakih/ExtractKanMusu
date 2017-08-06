@@ -13,7 +13,26 @@
 		F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC31F369E71007B7506 /* Main.storyboard */; };
 		F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCCC1F36A28B007B7506 /* pickup.rb */; };
 		F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */; };
+		F4EAFCD61F36D786007B7506 /* KanColleGraphicDivider in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */; };
+		F4EAFCE01F36D9E5007B7506 /* ExtractKanmusu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4EAFCDB1F36D7C7007B7506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F44C14B71D84F07300ADE497;
+			remoteInfo = KanColleGraphicDivider;
+		};
+		F4EAFCDD1F36D7D7007B7506 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F44C14B61D84F07300ADE497;
+			remoteInfo = KanColleGraphicDivider;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractKanMusu.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,10 @@
 		F4EAFCC61F369E71007B7506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EAFCCC1F36A28B007B7506 /* pickup.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = pickup.rb; sourceTree = "<group>"; };
 		F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpSWF.swift; sourceTree = "<group>"; };
+		F4EAFCD21F36D6C2007B7506 /* KanColleGraphicDivider */ = {isa = PBXFileReference; lastKnownFileType = text; name = KanColleGraphicDivider; path = KanColleGraphicDivider/build/Debug/KanColleGraphicDivider; sourceTree = "<group>"; };
+		F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = KanColleGraphicDivider; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KanColleGraphicDivider.xcodeproj; path = KanColleGraphicDivider/KanColleGraphicDivider.xcodeproj; sourceTree = "<group>"; };
+		F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractKanmusu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,8 +63,11 @@
 		F4EAFCB11F369E71007B7506 = {
 			isa = PBXGroup;
 			children = (
+				F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */,
+				F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */,
 				F4EAFCBC1F369E71007B7506 /* ExtractKanMusu */,
 				F4EAFCBB1F369E71007B7506 /* Products */,
+				F4EAFCD11F36D6C1007B7506 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +86,28 @@
 				F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */,
 				F4EAFCBF1F369E71007B7506 /* ViewController.swift */,
 				F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */,
+				F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */,
 				F4EAFCC11F369E71007B7506 /* Assets.xcassets */,
 				F4EAFCC31F369E71007B7506 /* Main.storyboard */,
 				F4EAFCC61F369E71007B7506 /* Info.plist */,
 			);
 			path = ExtractKanMusu;
+			sourceTree = "<group>";
+		};
+		F4EAFCD11F36D6C1007B7506 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4EAFCD21F36D6C2007B7506 /* KanColleGraphicDivider */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4EAFCD81F36D7C6007B7506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EAFCDC1F36D7C7007B7506 /* KanColleGraphicDivider */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +124,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F4EAFCDE1F36D7D7007B7506 /* PBXTargetDependency */,
 			);
 			name = ExtractKanMusu;
 			productName = ExtractKanMusu;
@@ -114,6 +158,12 @@
 			mainGroup = F4EAFCB11F369E71007B7506;
 			productRefGroup = F4EAFCBB1F369E71007B7506 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F4EAFCD81F36D7C6007B7506 /* Products */;
+					ProjectRef = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F4EAFCB91F369E71007B7506 /* ExtractKanMusu */,
@@ -121,11 +171,22 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		F4EAFCDC1F36D7C7007B7506 /* KanColleGraphicDivider */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = KanColleGraphicDivider;
+			remoteRef = F4EAFCDB1F36D7C7007B7506 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		F4EAFCB81F369E71007B7506 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4EAFCD61F36D786007B7506 /* KanColleGraphicDivider in Resources */,
 				F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */,
 				F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */,
 				F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */,
@@ -141,11 +202,20 @@
 			files = (
 				F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */,
 				F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */,
+				F4EAFCE01F36D9E5007B7506 /* ExtractKanmusu.swift in Sources */,
 				F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4EAFCDE1F36D7D7007B7506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KanColleGraphicDivider;
+			targetProxy = F4EAFCDD1F36D7D7007B7506 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F4EAFCC31F369E71007B7506 /* Main.storyboard */ = {
@@ -296,6 +366,7 @@
 				F4EAFCCB1F369E71007B7506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

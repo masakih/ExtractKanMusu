@@ -139,7 +139,7 @@ extension ViewController {
             existOriginalDir
             else { return }
         
-        guard let destinationDir = cachePathField.url,
+        guard let destinationDir = outputFolderField.url,
             let existDestinationDir = try? destinationDir.checkResourceIsReachable(),
             existDestinationDir
             else { return }
@@ -173,8 +173,46 @@ extension ViewController {
             }
         }
         
-        
-        
+        do {
+            
+            let tempURL = originalDir.appendingPathComponent("___temp_chu-chu-_ship___")
+            let destURL = destinationDir.appendingPathComponent("ちゅーちゅー")
+            
+            let swfs = try FileManager.default
+                .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
+                .filter { $0.pathExtension == "swf" }
+            
+            let semaphone = DispatchSemaphore(value: 4)
+            let group = DispatchGroup()
+            let queue = DispatchQueue(label: "extract", attributes: .concurrent)
+            
+            swfs.forEach { swf in
+                
+                queue.async(group: group) {
+                    
+                    semaphone.wait()
+                    
+                    do {
+                        
+                        try extractKanmusu(swf: swf, to: destURL)
+                        
+                    } catch {
+                        
+                        print(error)
+                    }
+                    
+                    semaphone.signal()
+                }
+            }
+            
+            group.wait()
+            
+            
+        } catch {
+            
+            print(error)
+            
+        }
     }
     
     @IBAction func extract(_ : Any?) {
