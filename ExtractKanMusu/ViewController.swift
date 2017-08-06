@@ -28,6 +28,8 @@ struct ApplicationDirecrories {
 
 class ViewController: NSViewController {
     
+    static let chuchu = "ちゅーちゅー"
+    static let tempDirName = "___temp_chu-chu-_ship___"
     
     @IBOutlet var cachePathField: NSPathControl!
     @IBOutlet var outputFolderField: NSPathControl!
@@ -109,12 +111,22 @@ extension ViewController {
             throw ExtractKanMusu.urlMissing("Cache dir is nil")
         }
         
-        let tempURL = tempParentURL.appendingPathComponent("___temp_chu-chu-_ship___")
+        let tempURL = tempParentURL.appendingPathComponent(ViewController.tempDirName)
         
         try FileManager.default
             .createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
         
+    }
+    func deleteTempDir() throws {
         
+        guard let tempParentURL = cachePathField.url else {
+            
+            throw ExtractKanMusu.urlMissing("Cache dir is nil")
+        }
+        
+        let tempURL = tempParentURL.appendingPathComponent(ViewController.tempDirName)
+        
+        try FileManager.default.removeItem(at: tempURL)
     }
     func createDestDir() throws {
         
@@ -123,11 +135,10 @@ extension ViewController {
             throw ExtractKanMusu.urlMissing("Output dir is nil")
         }
         
-        let destURL = destParentURL.appendingPathComponent("ちゅーちゅー")
+        let destURL = destParentURL.appendingPathComponent(ViewController.chuchu)
         
         try FileManager.default
             .createDirectory(at: destURL, withIntermediateDirectories: true, attributes: nil)
-        
         
     }
     
@@ -143,6 +154,18 @@ extension ViewController {
             let existDestinationDir = try? destinationDir.checkResourceIsReachable(),
             existDestinationDir
             else { return }
+        
+        
+        defer {
+            
+            do {
+                
+             try deleteTempDir()
+                
+            } catch {
+                print(error)
+            }
+        }
         
         do {
             
@@ -175,8 +198,8 @@ extension ViewController {
         
         do {
             
-            let tempURL = originalDir.appendingPathComponent("___temp_chu-chu-_ship___")
-            let destURL = destinationDir.appendingPathComponent("ちゅーちゅー")
+            let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
+            let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
             
             let swfs = try FileManager.default
                 .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
