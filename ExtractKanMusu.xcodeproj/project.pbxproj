@@ -1,0 +1,303 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */; };
+		F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBF1F369E71007B7506 /* ViewController.swift */; };
+		F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC11F369E71007B7506 /* Assets.xcassets */; };
+		F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC31F369E71007B7506 /* Main.storyboard */; };
+		F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCCC1F36A28B007B7506 /* pickup.rb */; };
+		F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractKanMusu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F4EAFCBF1F369E71007B7506 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F4EAFCC11F369E71007B7506 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4EAFCC41F369E71007B7506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F4EAFCC61F369E71007B7506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4EAFCCC1F36A28B007B7506 /* pickup.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = pickup.rb; sourceTree = "<group>"; };
+		F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpSWF.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4EAFCB71F369E71007B7506 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F4EAFCB11F369E71007B7506 = {
+			isa = PBXGroup;
+			children = (
+				F4EAFCBC1F369E71007B7506 /* ExtractKanMusu */,
+				F4EAFCBB1F369E71007B7506 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F4EAFCBB1F369E71007B7506 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4EAFCBC1F369E71007B7506 /* ExtractKanMusu */ = {
+			isa = PBXGroup;
+			children = (
+				F4EAFCCC1F36A28B007B7506 /* pickup.rb */,
+				F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */,
+				F4EAFCBF1F369E71007B7506 /* ViewController.swift */,
+				F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */,
+				F4EAFCC11F369E71007B7506 /* Assets.xcassets */,
+				F4EAFCC31F369E71007B7506 /* Main.storyboard */,
+				F4EAFCC61F369E71007B7506 /* Info.plist */,
+			);
+			path = ExtractKanMusu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4EAFCB91F369E71007B7506 /* ExtractKanMusu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4EAFCC91F369E71007B7506 /* Build configuration list for PBXNativeTarget "ExtractKanMusu" */;
+			buildPhases = (
+				F4EAFCB61F369E71007B7506 /* Sources */,
+				F4EAFCB71F369E71007B7506 /* Frameworks */,
+				F4EAFCB81F369E71007B7506 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ExtractKanMusu;
+			productName = ExtractKanMusu;
+			productReference = F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4EAFCB21F369E71007B7506 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Hori,Masaki";
+				TargetAttributes = {
+					F4EAFCB91F369E71007B7506 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = F4EAFCB51F369E71007B7506 /* Build configuration list for PBXProject "ExtractKanMusu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4EAFCB11F369E71007B7506;
+			productRefGroup = F4EAFCBB1F369E71007B7506 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4EAFCB91F369E71007B7506 /* ExtractKanMusu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4EAFCB81F369E71007B7506 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */,
+				F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */,
+				F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4EAFCB61F369E71007B7506 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */,
+				F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */,
+				F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F4EAFCC31F369E71007B7506 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4EAFCC41F369E71007B7506 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F4EAFCC71F369E71007B7506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4EAFCC81F369E71007B7506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		F4EAFCCA1F369E71007B7506 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExtractKanMusu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.ExtractKanMusu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F4EAFCCB1F369E71007B7506 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ExtractKanMusu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.masakih.ExtractKanMusu;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4EAFCB51F369E71007B7506 /* Build configuration list for PBXProject "ExtractKanMusu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4EAFCC71F369E71007B7506 /* Debug */,
+				F4EAFCC81F369E71007B7506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4EAFCC91F369E71007B7506 /* Build configuration list for PBXNativeTarget "ExtractKanMusu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4EAFCCA1F369E71007B7506 /* Debug */,
+				F4EAFCCB1F369E71007B7506 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4EAFCB21F369E71007B7506 /* Project object */;
+}
