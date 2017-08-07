@@ -33,8 +33,11 @@ class ViewController: NSViewController {
     
     @IBOutlet var cachePathField: NSPathControl!
     @IBOutlet var outputFolderField: NSPathControl!
+    
+    let progress = ProgressPanelController()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         cachePathField.url = ApplicationDirecrories.support
@@ -42,13 +45,10 @@ class ViewController: NSViewController {
             .appendingPathComponent("Caches")
         
         outputFolderField.url = ApplicationDirecrories.desctop
+        
+        
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
+    
 }
 
 
@@ -88,12 +88,11 @@ extension ViewController {
             self.cachePathField.url = url
         }
         
-        
     }
     
-    @IBAction func chooseOutputFOlder(_ : Any?) {
+    @IBAction func chooseOutputFolder(_ : Any?) {
         
-        chooseFolder(prompt: "Choose Cache Folder", current: outputFolderField.url) {
+        chooseFolder(prompt: "Choose Output Folder", current: outputFolderField.url) {
             
             guard let url = $0 else { return }
             self.outputFolderField.url = url
@@ -102,6 +101,7 @@ extension ViewController {
     }
     
     enum ExtractKanMusu: Error {
+        
         case urlMissing(String)
     }
     func createTempDir() throws {
@@ -117,6 +117,7 @@ extension ViewController {
             .createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
         
     }
+    
     func deleteTempDir() throws {
         
         guard let tempParentURL = cachePathField.url else {
@@ -128,6 +129,7 @@ extension ViewController {
         
         try FileManager.default.removeItem(at: tempURL)
     }
+    
     func createDestDir() throws {
         
         guard let destParentURL = outputFolderField.url else {
@@ -140,6 +142,66 @@ extension ViewController {
         try FileManager.default
             .createDirectory(at: destURL, withIntermediateDirectories: true, attributes: nil)
         
+    }
+    
+    func moveSWF(from originalDir: URL, to destinationDir: URL) {
+        
+        progress.message = "Picking up SWF file from Cache Directory."
+        
+        do {
+            
+            try pickUpSWF(from: originalDir, to: destinationDir)
+            
+        } catch {
+            
+            print("Can not pickup.", terminator: " : ")
+            
+            guard let error = error as? PickUPSWFError else {
+                print("Unkown error.")
+                return
+            }
+            
+            switch error {
+            case .scriptNotFound: print("Script not found.")
+                
+            case let .commandFail(status): print("Command faile status \(status).")
+            }
+        }
+    }
+    
+    
+    func extractKanmusus(swfs: [URL], to destURL: URL) {
+        
+        progress.message = "Extracting KanMusu Image from SWF file."
+        
+        let semaphone = DispatchSemaphore(value: 4)
+        let group = DispatchGroup()
+        let queue = DispatchQueue(label: "extract", attributes: .concurrent)
+        
+        swfs.forEach { swf in
+            
+            queue.async(group: group) {
+                
+                semaphone.wait()
+                
+                do {
+                    
+                    try extractKanmusu(swf: swf, to: destURL)
+                    
+                } catch {
+                    
+                    print(error)
+                }
+                
+                semaphone.signal()
+                
+                self.progress.appendFinished()
+                
+            }
+            
+        }
+        
+        group.wait()
     }
     
     
@@ -155,17 +217,7 @@ extension ViewController {
             existDestinationDir
             else { return }
         
-        
-        defer {
-            
-            do {
-                
-             try deleteTempDir()
-                
-            } catch {
-                print(error)
-            }
-        }
+        self.view.window?.beginSheet(progress.window!, completionHandler: nil)
         
         do {
             
@@ -177,64 +229,33 @@ extension ViewController {
             print(error)
         }
         
+        let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
+        let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
         
-        do {
+        DispatchQueue(label: "Nya-nn").async {
             
-            try pickUpSWF(from: originalDir, to: destinationDir)
-            
-        } catch {
-            
-            print("Can not pickup.", terminator: " : ")
-            
-            guard let error = error as? PickUPSWFError else {
-                print("Unkown error.")
-                return
-            }
-            switch error {
-            case .scriptNotFound: print("Script not found.")
-            case let .commandFail(status): print("Command faile status \(status).")
-            }
-        }
-        
-        do {
-            
-            let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
-            let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
-            
-            let swfs = try FileManager.default
-                .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
-                .filter { $0.pathExtension == "swf" }
-            
-            let semaphone = DispatchSemaphore(value: 4)
-            let group = DispatchGroup()
-            let queue = DispatchQueue(label: "extract", attributes: .concurrent)
-            
-            swfs.forEach { swf in
+            do {
+                self.moveSWF(from: originalDir, to: destinationDir)
                 
-                queue.async(group: group) {
+                let swfs = try FileManager.default
+                    .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
+                    .filter { $0.pathExtension == "swf" }
+                
+                self.progress.count = swfs.count
+                
+                self.extractKanmusus(swfs: swfs, to: destURL)
+                
+                DispatchQueue.main.async {
                     
-                    semaphone.wait()
-                    
-                    do {
-                        
-                        try extractKanmusu(swf: swf, to: destURL)
-                        
-                    } catch {
-                        
-                        print(error)
-                    }
-                    
-                    semaphone.signal()
+                    self.view.window?.endSheet(self.progress.window!)
                 }
+                
+                try self.deleteTempDir()
+                
+            } catch {
+                
+                print(error)
             }
-            
-            group.wait()
-            
-            
-        } catch {
-            
-            print(error)
-            
         }
     }
     

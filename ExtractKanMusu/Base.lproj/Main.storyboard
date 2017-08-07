@@ -739,7 +739,7 @@
                                     <font key="font" size="11" name=".HiraKakuInterface-W3"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="chooseOutputFOlder:" target="XfG-lQ-9wD" id="Wjd-XM-nE7"/>
+                                    <action selector="chooseOutputFolder:" target="XfG-lQ-9wD" id="g9I-bh-TaL"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Iw-pN-vkY">
@@ -761,10 +761,10 @@
                                 <rect key="frame" x="13" y="59" width="449" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </box>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mse-3Q-V9C">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mse-3Q-V9C">
                                 <rect key="frame" x="20" y="14" width="323" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="ちゅーちゅーするとすごく時間がかかるし、Macがうなりだすよ。 それでもちゅーちゅーする？" id="v0k-Ou-jCB">
+                                <textFieldCell key="cell" allowsUndo="NO" sendsActionOnEndEditing="YES" title="ちゅーちゅーするとすごく時間がかかるし、Macがうなりだすよ。 それでもちゅーちゅーする？" id="v0k-Ou-jCB">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
