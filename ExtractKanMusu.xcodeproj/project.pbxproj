@@ -88,16 +88,16 @@
 		F4EAFCBC1F369E71007B7506 /* ExtractKanMusu */ = {
 			isa = PBXGroup;
 			children = (
-				F4EAFCCC1F36A28B007B7506 /* pickup.rb */,
 				F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */,
-				F4EAFCBF1F369E71007B7506 /* ViewController.swift */,
+				F4EAFCC31F369E71007B7506 /* Main.storyboard */,
 				F41A44CD1F38B8510066F83D /* ApplicationDirecrories.swift */,
+				F4EAFCBF1F369E71007B7506 /* ViewController.swift */,
 				F41A44C61F3710D10066F83D /* ProgressPanelController.swift */,
 				F41A44C71F3710D10066F83D /* ProgressPanelController.xib */,
+				F4EAFCCC1F36A28B007B7506 /* pickup.rb */,
 				F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */,
 				F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */,
 				F4EAFCC11F369E71007B7506 /* Assets.xcassets */,
-				F4EAFCC31F369E71007B7506 /* Main.storyboard */,
 				F4EAFCC61F369E71007B7506 /* Info.plist */,
 			);
 			path = ExtractKanMusu;

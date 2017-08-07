@@ -13,6 +13,10 @@ class ViewController: NSViewController {
     static let chuchu = "ちゅーちゅー"
     static let tempDirName = "___temp_chu-chu-_ship___"
     
+    
+    let progress = ProgressPanelController()
+    
+    
     @IBOutlet var cachePathField: NSPathControl!
     @IBOutlet var outputFolderField: NSPathControl!
     
@@ -25,8 +29,7 @@ class ViewController: NSViewController {
         return maxPower ? coreCount : coreCount / 2
     }
     
-    let progress = ProgressPanelController()
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -44,7 +47,7 @@ class ViewController: NSViewController {
 
 extension ViewController {
     
-    func chooseFolder(prompt: String, current: URL?, handler: @escaping (URL?) -> Void) {
+    private func chooseFolder(prompt: String, current: URL?, handler: @escaping (URL?) -> Void) {
         
         let panel = NSOpenPanel()
         
@@ -90,11 +93,20 @@ extension ViewController {
         
     }
     
-    enum ExtractKanMusu: Error {
+    @IBAction func extract(_ : Any?) {
+        
+        execute()
+        
+    }
+}
+
+extension ViewController {
+
+    private enum ExtractKanMusu: Error {
         
         case urlMissing(String)
     }
-    func createTempDir() throws {
+    private func createTempDir() throws {
         
         guard let tempParentURL = cachePathField.url else {
             
@@ -108,7 +120,7 @@ extension ViewController {
         
     }
     
-    func deleteTempDir() throws {
+    private func deleteTempDir() throws {
         
         guard let tempParentURL = cachePathField.url else {
             
@@ -120,7 +132,7 @@ extension ViewController {
         try FileManager.default.removeItem(at: tempURL)
     }
     
-    func createDestDir() throws {
+    private func createDestDir() throws {
         
         guard let destParentURL = outputFolderField.url else {
             
@@ -134,7 +146,7 @@ extension ViewController {
         
     }
     
-    func moveSWF(from originalDir: URL, to destinationDir: URL) {
+    private func moveSWF(from originalDir: URL, to destinationDir: URL) {
         
         progress.message = "Picking up SWF file from Cache Directory."
         
@@ -160,7 +172,7 @@ extension ViewController {
     }
     
     
-    func extractKanmusus(swfs: [URL], to destURL: URL) {
+    private func extractKanmusus(swfs: [URL], to destURL: URL) {
         
         progress.message = "Extracting KanMusu Image from SWF file."
         
@@ -195,7 +207,7 @@ extension ViewController {
     }
     
     
-    func execute() {
+    fileprivate func execute() {
         
         guard let originalDir = cachePathField.url,
             let existOriginalDir = try? originalDir.checkResourceIsReachable(),
@@ -247,12 +259,6 @@ extension ViewController {
                 print(error)
             }
         }
-    }
-    
-    @IBAction func extract(_ : Any?) {
-        
-        execute()
-        
     }
     
 }
