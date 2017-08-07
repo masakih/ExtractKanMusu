@@ -34,6 +34,15 @@ class ViewController: NSViewController {
     @IBOutlet var cachePathField: NSPathControl!
     @IBOutlet var outputFolderField: NSPathControl!
     
+    dynamic var maxPower = false
+    
+    var useCoreCount: Int {
+        
+        let coreCount = ProcessInfo.processInfo.processorCount
+        
+        return maxPower ? coreCount : coreCount / 2
+    }
+    
     let progress = ProgressPanelController()
 
     override func viewDidLoad() {
@@ -45,7 +54,6 @@ class ViewController: NSViewController {
             .appendingPathComponent("Caches")
         
         outputFolderField.url = ApplicationDirecrories.desctop
-        
         
     }
     
@@ -174,7 +182,7 @@ extension ViewController {
         
         progress.message = "Extracting KanMusu Image from SWF file."
         
-        let semaphone = DispatchSemaphore(value: 4)
+        let semaphone = DispatchSemaphore(value: useCoreCount)
         let group = DispatchGroup()
         let queue = DispatchQueue(label: "extract", attributes: .concurrent)
         
