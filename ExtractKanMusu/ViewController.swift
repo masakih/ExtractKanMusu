@@ -95,7 +95,14 @@ extension ViewController {
     
     @IBAction func extract(_ : Any?) {
         
-        execute()
+        self.view.window?.beginSheet(progress.window!, completionHandler: nil)
+        
+        execute() { [weak self] in
+            
+            guard let `self` = self else { return }
+            
+            self.view.window?.endSheet(self.progress.window!)
+        }
         
     }
 }
@@ -207,56 +214,55 @@ extension ViewController {
     }
     
     
-    fileprivate func execute() {
+    fileprivate func execute(completeHandler: @escaping () -> Void) {
         
         guard let originalDir = cachePathField.url,
             let existOriginalDir = try? originalDir.checkResourceIsReachable(),
-            existOriginalDir
-            else { return }
+            existOriginalDir else {
+                
+                completeHandler()
+                return
+        }
         
         guard let destinationDir = outputFolderField.url,
             let existDestinationDir = try? destinationDir.checkResourceIsReachable(),
-            existDestinationDir
-            else { return }
-        
-        self.view.window?.beginSheet(progress.window!, completionHandler: nil)
-        
-        do {
-            
-            try createTempDir()
-            try createDestDir()
-            
-        } catch {
-            
-            print(error)
+            existDestinationDir else {
+                
+                completeHandler()
+                return
         }
         
-        let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
-        let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
         
         DispatchQueue(label: "Nya-nn").async {
             
             do {
+                
+                try self.createTempDir()
+                try self.createDestDir()
+                
                 self.moveSWF(from: originalDir, to: destinationDir)
+                
+                let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
+                let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
                 
                 let swfs = try FileManager.default
                     .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
-                    .filter { $0.pathExtension == "swf" }
+                    .filter { $0.pathExtension.lowercased() == "swf" }
                 
                 self.progress.count = swfs.count
                 
                 self.extractKanmusus(swfs: swfs, to: destURL)
-                
-                DispatchQueue.main.async {
-                    
-                    self.view.window?.endSheet(self.progress.window!)
-                }
                 
                 try self.deleteTempDir()
                 
             } catch {
                 
                 print(error)
+            }
+            
+            DispatchQueue.main.async {
+                
+                completeHandler()
             }
         }
     }
