@@ -10,6 +10,17 @@ import Cocoa
 
 class ProgressPanelController: NSWindowController, MessageObserver {
     
+    override var windowNibName: String? {
+        
+        return "ProgressPanelController"
+    }
+    
+    override func windowDidLoad() {
+        
+        super.windowDidLoad()
+        
+    }
+    
     private dynamic var rawCount: Int = 0 {
         
         didSet {
@@ -31,7 +42,7 @@ class ProgressPanelController: NSWindowController, MessageObserver {
         }
     }
     
-    private dynamic var finished: Int = 0 {
+    private dynamic var completed: Int = 0 {
         
         didSet {
             
@@ -41,24 +52,7 @@ class ProgressPanelController: NSWindowController, MessageObserver {
         }
     }
     
-    private dynamic var progresString: String {
-        
-        get {
-            
-            if count == 0 {
-                return ""
-            }
-            
-            let parcent = Int( Double(finished) / Double(rawCount) * 100 )
-            
-            return "\(finished)/\(rawCount) (\(parcent)%)"
-            
-        }
-    }
-    
     private dynamic var rawMessage: String = ""
-    
-    
     var message: String = "" {
         
         didSet {
@@ -71,30 +65,33 @@ class ProgressPanelController: NSWindowController, MessageObserver {
         }
     }
     
-    dynamic var font: NSFont {
+    private dynamic var progresString: String {
+        
+        get {
+            
+            if count == 0 {
+                return ""
+            }
+            
+            let parcent = Int( Double(completed) / Double(rawCount) * 100 )
+            
+            return "\(completed)/\(rawCount) (\(parcent)%)"
+            
+        }
+    }
+    
+    private dynamic var font: NSFont {
         
         let size = NSFont.systemFontSize()
         return NSFont.monospacedDigitSystemFont(ofSize: size, weight: NSFontWeightRegular)
-    }
-    
-    
-    override var windowNibName: String? {
-        
-        return "ProgressPanelController"
     }
     
     func increse() {
         
         DispatchQueue.main.async {
             
-            self.finished += 1
+            self.completed += 1
         }
-    }
-    
-    override func windowDidLoad() {
-        
-        super.windowDidLoad()
-        
     }
     
 }
