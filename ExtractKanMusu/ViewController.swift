@@ -10,24 +10,15 @@ import Cocoa
 
 class ViewController: NSViewController {
     
-    static let chuchu = "ちゅーちゅー"
-    static let tempDirName = "___temp_chu-chu-_ship___"
-    
-    
     let progress = ProgressPanelController()
+    
+    var chuuchuu: ChuuChuu?
     
     
     @IBOutlet var cachePathField: NSPathControl!
     @IBOutlet var outputFolderField: NSPathControl!
     
     dynamic var maxPower = false
-    
-    var useCoreCount: Int {
-        
-        let coreCount = ProcessInfo.processInfo.processorCount
-        
-        return maxPower ? coreCount : coreCount / 2
-    }
     
     
     override func viewDidLoad() {
@@ -63,8 +54,7 @@ extension ViewController {
         
         panel.beginSheetModal(for: window) {
             
-            guard $0 == NSFileHandlingPanelOKButton
-                else { return }
+            guard $0 == NSFileHandlingPanelOKButton else { return }
             
             handler(panel.url)
             
@@ -95,9 +85,25 @@ extension ViewController {
     
     @IBAction func extract(_ : Any?) {
         
+        guard let original = cachePathField.url else {
+            
+            print("CachPath is nil.")
+            
+            return
+        }
+        
+        guard let dest = outputFolderField.url else {
+            
+            print("outputPath is nil.")
+            
+            return
+        }
+        
+        chuuchuu = ChuuChuu(observer: progress, original: original, destination: dest)
+        
         self.view.window?.beginSheet(progress.window!, completionHandler: nil)
         
-        execute() { [weak self] in
+        chuuchuu?.execute(maxPower: maxPower) { [weak self] in
             
             guard let `self` = self else { return }
             
@@ -106,166 +112,3 @@ extension ViewController {
         
     }
 }
-
-extension ViewController {
-
-    private enum ExtractKanMusu: Error {
-        
-        case urlMissing(String)
-    }
-    private func createTempDir() throws {
-        
-        guard let tempParentURL = cachePathField.url else {
-            
-            throw ExtractKanMusu.urlMissing("Cache dir is nil")
-        }
-        
-        let tempURL = tempParentURL.appendingPathComponent(ViewController.tempDirName)
-        
-        try FileManager.default
-            .createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
-        
-    }
-    
-    private func deleteTempDir() throws {
-        
-        guard let tempParentURL = cachePathField.url else {
-            
-            throw ExtractKanMusu.urlMissing("Cache dir is nil")
-        }
-        
-        let tempURL = tempParentURL.appendingPathComponent(ViewController.tempDirName)
-        
-        try FileManager.default.removeItem(at: tempURL)
-    }
-    
-    private func createDestDir() throws {
-        
-        guard let destParentURL = outputFolderField.url else {
-            
-            throw ExtractKanMusu.urlMissing("Output dir is nil")
-        }
-        
-        let destURL = destParentURL.appendingPathComponent(ViewController.chuchu)
-        
-        try FileManager.default
-            .createDirectory(at: destURL, withIntermediateDirectories: true, attributes: nil)
-        
-    }
-    
-    private func moveSWF(from originalDir: URL, to destinationDir: URL) {
-        
-        progress.message = "Picking up SWF file from Cache Directory."
-        
-        do {
-            
-            try pickUpSWF(from: originalDir, to: destinationDir)
-            
-        } catch {
-            
-            print("Can not pickup.", terminator: " : ")
-            
-            guard let error = error as? PickUPSWFError else {
-                print("Unkown error.")
-                return
-            }
-            
-            switch error {
-            case .scriptNotFound: print("Script not found.")
-                
-            case let .commandFail(status): print("Command faile status \(status).")
-            }
-        }
-    }
-    
-    
-    private func extractKanmusus(swfs: [URL], to destURL: URL) {
-        
-        progress.message = "Extracting KanMusu Image from SWF file."
-        
-        let semaphone = DispatchSemaphore(value: useCoreCount)
-        let group = DispatchGroup()
-        let queue = DispatchQueue(label: "extract", attributes: .concurrent)
-        
-        swfs.forEach { swf in
-            
-            queue.async(group: group) {
-                
-                semaphone.wait()
-                
-                do {
-                    
-                    try extractKanmusu(swf: swf, to: destURL)
-                    
-                } catch {
-                    
-                    print(error)
-                }
-                
-                semaphone.signal()
-                
-                self.progress.appendFinished()
-                
-            }
-            
-        }
-        
-        group.wait()
-    }
-    
-    
-    fileprivate func execute(completeHandler: @escaping () -> Void) {
-        
-        guard let originalDir = cachePathField.url,
-            let existOriginalDir = try? originalDir.checkResourceIsReachable(),
-            existOriginalDir else {
-                
-                completeHandler()
-                return
-        }
-        
-        guard let destinationDir = outputFolderField.url,
-            let existDestinationDir = try? destinationDir.checkResourceIsReachable(),
-            existDestinationDir else {
-                
-                completeHandler()
-                return
-        }
-        
-        
-        DispatchQueue(label: "Nya-nn").async {
-            
-            do {
-                
-                try self.createTempDir()
-                try self.createDestDir()
-                
-                self.moveSWF(from: originalDir, to: destinationDir)
-                
-                let tempURL = originalDir.appendingPathComponent(ViewController.tempDirName)
-                let destURL = destinationDir.appendingPathComponent(ViewController.chuchu)
-                
-                let swfs = try FileManager.default
-                    .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
-                    .filter { $0.pathExtension.lowercased() == "swf" }
-                
-                self.progress.count = swfs.count
-                
-                self.extractKanmusus(swfs: swfs, to: destURL)
-                
-                try self.deleteTempDir()
-                
-            } catch {
-                
-                print(error)
-            }
-            
-            DispatchQueue.main.async {
-                
-                completeHandler()
-            }
-        }
-    }
-    
-}
-

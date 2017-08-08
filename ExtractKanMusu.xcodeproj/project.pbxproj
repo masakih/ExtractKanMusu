@@ -10,6 +10,7 @@
 		F41A44C81F3710D10066F83D /* ProgressPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A44C61F3710D10066F83D /* ProgressPanelController.swift */; };
 		F41A44C91F3710D10066F83D /* ProgressPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41A44C71F3710D10066F83D /* ProgressPanelController.xib */; };
 		F41A44CE1F38B8510066F83D /* ApplicationDirecrories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A44CD1F38B8510066F83D /* ApplicationDirecrories.swift */; };
+		F41A44D21F39E1450066F83D /* ChuuChuu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A44D11F39E1450066F83D /* ChuuChuu.swift */; };
 		F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */; };
 		F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBF1F369E71007B7506 /* ViewController.swift */; };
 		F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC11F369E71007B7506 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		F41A44C61F3710D10066F83D /* ProgressPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPanelController.swift; sourceTree = "<group>"; };
 		F41A44C71F3710D10066F83D /* ProgressPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPanelController.xib; sourceTree = "<group>"; };
 		F41A44CD1F38B8510066F83D /* ApplicationDirecrories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDirecrories.swift; sourceTree = "<group>"; };
+		F41A44D11F39E1450066F83D /* ChuuChuu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuuChuu.swift; sourceTree = "<group>"; };
 		F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractKanMusu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAFCBF1F369E71007B7506 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				F4EAFCBF1F369E71007B7506 /* ViewController.swift */,
 				F41A44C61F3710D10066F83D /* ProgressPanelController.swift */,
 				F41A44C71F3710D10066F83D /* ProgressPanelController.xib */,
+				F41A44D11F39E1450066F83D /* ChuuChuu.swift */,
 				F4EAFCCC1F36A28B007B7506 /* pickup.rb */,
 				F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */,
 				F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */,
@@ -214,6 +217,7 @@
 				F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */,
 				F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */,
 				F4EAFCE01F36D9E5007B7506 /* ExtractKanmusu.swift in Sources */,
+				F41A44D21F39E1450066F83D /* ChuuChuu.swift in Sources */,
 				F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */,
 				F41A44C81F3710D10066F83D /* ProgressPanelController.swift in Sources */,
 			);

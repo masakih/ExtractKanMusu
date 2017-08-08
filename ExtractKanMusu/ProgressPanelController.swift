@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ProgressPanelController: NSWindowController {
+class ProgressPanelController: NSWindowController, MessageObserver {
     
     private dynamic var rawCount: Int = 0 {
         
@@ -83,7 +83,7 @@ class ProgressPanelController: NSWindowController {
         return "ProgressPanelController"
     }
     
-    func appendFinished() {
+    func increse() {
         
         DispatchQueue.main.async {
             
