@@ -1,0 +1,117 @@
+
+/* Class = "NSMenuItem"; title = "ExtractKanMusu"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "艦娘ちゅーちゅー";
+
+/* Class = "NSMenuItem"; title = "Quit ExtractKanMusu"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "艦娘ちゅーちゅーを終了";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "5QF-Oa-p0T"; */
+"5QF-Oa-p0T.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "About ExtractKanMusu"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "艦娘ちゅーちゅーについて";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "6dh-zS-Vam"; */
+"6dh-zS-Vam.title" = "やり直す";
+
+/* Class = "NSTextFieldCell"; title = "キャッシュフォルダ："; ObjectID = "940-lm-o1F"; */
+"940-lm-o1F.title" = "キャッシュフォルダ：";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "環境設定…";
+
+/* Class = "NSButtonCell"; title = "Max Power"; ObjectID = "CqP-dF-MMv"; */
+"CqP-dF-MMv.title" = "Max Power";
+
+/* Class = "NSMenuItem"; title = "Close"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "閉じる";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "ExtractKanMusu Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "艦娘ちゅーちゅー ヘルプ";
+
+/* Class = "NSWindow"; title = "艦娘ちゅーちゅー"; ObjectID = "IQv-IB-iLA"; */
+"IQv-IB-iLA.title" = "艦娘ちゅーちゅー";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "すべて表示";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "すべてを手前に移動";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "サービス";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "しまう";
+
+/* Class = "NSMenuItem"; title = "Hide ExtractKanMusu"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "艦娘ちゅーちゅーを隠す";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "拡大/縮小";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "Ruw-6m-B2m"; */
+"Ruw-6m-B2m.title" = "すべて選択";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "ウインドウ";
+
+/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "他を隠す";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "W48-6f-4Dl"; */
+"W48-6f-4Dl.title" = "編集";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "ウインドウ";
+
+/* Class = "NSButtonCell"; title = "変更"; ObjectID = "acZ-cN-MBf"; */
+"acZ-cN-MBf.title" = "変更";
+
+/* Class = "NSButtonCell"; title = "ちゅーちゅー"; ObjectID = "bNO-Uy-Syt"; */
+"bNO-Uy-Syt.title" = "ちゅーちゅー";
+
+/* Class = "NSMenu"; title = "File"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "File"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "ファイル";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "dRJ-4n-Yzg"; */
+"dRJ-4n-Yzg.title" = "元に戻す";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "gVA-U4-sdL"; */
+"gVA-U4-sdL.title" = "ペースト";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "サービス";
+
+/* Class = "NSButtonCell"; title = "変更"; ObjectID = "ie6-ZL-Re4"; */
+"ie6-ZL-Re4.title" = "変更";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "pa3-QI-u2k"; */
+"pa3-QI-u2k.title" = "削除";
+
+/* Class = "NSMenu"; title = "ExtractKanMusu"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "艦娘ちゅーちゅー";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "uRl-iY-unG"; */
+"uRl-iY-unG.title" = "カット";
+
+/* Class = "NSTextFieldCell"; title = "ちゅーちゅーするとすごく時間がかかるし、Macがうなりだすよ。 それでもちゅーちゅーする？"; ObjectID = "v0k-Ou-jCB"; */
+"v0k-Ou-jCB.title" = "ちゅーちゅーするとすごく時間がかかるし、Macがうなりだすよ。 それでもちゅーちゅーする？";
+
+/* Class = "NSTextFieldCell"; title = "出力フォルダ："; ObjectID = "vkJ-JL-Cez"; */
+"vkJ-JL-Cez.title" = "出力フォルダ：";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "ヘルプ";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "x3v-GG-iWU"; */
+"x3v-GG-iWU.title" = "コピー";

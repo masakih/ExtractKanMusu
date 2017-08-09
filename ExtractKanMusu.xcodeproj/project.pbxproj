@@ -11,6 +11,7 @@
 		F41A44CE1F38B8510066F83D /* ApplicationDirecrories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A44CD1F38B8510066F83D /* ApplicationDirecrories.swift */; };
 		F41A44D21F39E1450066F83D /* ChuuChuu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41A44D11F39E1450066F83D /* ChuuChuu.swift */; };
 		F41A44D31F3A09C30066F83D /* ProgressPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41A44D51F3A09C30066F83D /* ProgressPanelController.xib */; };
+		F41A44DC1F3B2B7F0066F83D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F41A44DE1F3B2B7F0066F83D /* InfoPlist.strings */; };
 		F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */; };
 		F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBF1F369E71007B7506 /* ViewController.swift */; };
 		F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC11F369E71007B7506 /* Assets.xcassets */; };
@@ -43,6 +44,8 @@
 		F41A44CD1F38B8510066F83D /* ApplicationDirecrories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationDirecrories.swift; sourceTree = "<group>"; };
 		F41A44D11F39E1450066F83D /* ChuuChuu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuuChuu.swift; sourceTree = "<group>"; };
 		F41A44D41F3A09C30066F83D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ProgressPanelController.xib; sourceTree = "<group>"; };
+		F41A44D61F3B29990066F83D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		F41A44DD1F3B2B7F0066F83D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractKanMusu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAFCBF1F369E71007B7506 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 				F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */,
 				F4EAFCC11F369E71007B7506 /* Assets.xcassets */,
 				F4EAFCC61F369E71007B7506 /* Info.plist */,
+				F41A44DE1F3B2B7F0066F83D /* InfoPlist.strings */,
 			);
 			path = ExtractKanMusu;
 			sourceTree = "<group>";
@@ -199,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4EAFCD61F36D786007B7506 /* KanColleGraphicDivider in Resources */,
+				F41A44DC1F3B2B7F0066F83D /* InfoPlist.strings in Resources */,
 				F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */,
 				F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */,
 				F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */,
@@ -242,10 +247,19 @@
 			name = ProgressPanelController.xib;
 			sourceTree = "<group>";
 		};
+		F41A44DE1F3B2B7F0066F83D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F41A44DD1F3B2B7F0066F83D /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		F4EAFCC31F369E71007B7506 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F4EAFCC41F369E71007B7506 /* Base */,
+				F41A44D61F3B29990066F83D /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -257,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -307,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

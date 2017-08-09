@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  ExtractKanMusu
+
+  Created by Hori,Masaki on 2017/08/09.
+  Copyright © 2017年 Hori,Masaki. All rights reserved.
+*/
+
+
+CFBundleName = "艦娘ちゅーちゅー";
+CFBundleDisplayName = "艦娘ちゅーちゅー";
