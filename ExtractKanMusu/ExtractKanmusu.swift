@@ -28,6 +28,7 @@ func extractKanmusu(swf: URL, to dir: URL) throws {
     process.launchPath = divider
     
     process.arguments = [
+        "-s",
         "-o",
         "\(dir.path)",
         "-c",
