@@ -13,32 +13,14 @@
 		F41A44D31F3A09C30066F83D /* ProgressPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41A44D51F3A09C30066F83D /* ProgressPanelController.xib */; };
 		F41A44DC1F3B2B7F0066F83D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F41A44DE1F3B2B7F0066F83D /* InfoPlist.strings */; };
 		F41A44E11F3B38C00066F83D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F41A44E01F3B38C00066F83D /* LICENSE */; };
+		F473F0442129243800EAC987 /* PickupInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473F0432129243800EAC987 /* PickupInformation.swift */; };
 		F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */; };
 		F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCBF1F369E71007B7506 /* ViewController.swift */; };
 		F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC11F369E71007B7506 /* Assets.xcassets */; };
 		F4EAFCC51F369E71007B7506 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCC31F369E71007B7506 /* Main.storyboard */; };
 		F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCCC1F36A28B007B7506 /* pickup.rb */; };
-		F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */; };
-		F4EAFCD61F36D786007B7506 /* KanColleGraphicDivider in Resources */ = {isa = PBXBuildFile; fileRef = F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */; };
-		F4EAFCE01F36D9E5007B7506 /* ExtractKanmusu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */; };
+		F4EAFCCF1F36B8FE007B7506 /* PickupPNG.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EAFCCE1F36B8FE007B7506 /* PickupPNG.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		F4EAFCDB1F36D7C7007B7506 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F44C14B71D84F07300ADE497;
-			remoteInfo = KanColleGraphicDivider;
-		};
-		F4EAFCDD1F36D7D7007B7506 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F44C14B61D84F07300ADE497;
-			remoteInfo = KanColleGraphicDivider;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F41A44C61F3710D10066F83D /* ProgressPanelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPanelController.swift; sourceTree = "<group>"; };
@@ -48,6 +30,7 @@
 		F41A44D61F3B29990066F83D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		F41A44DD1F3B2B7F0066F83D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F41A44E01F3B38C00066F83D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F473F0432129243800EAC987 /* PickupInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupInformation.swift; sourceTree = "<group>"; };
 		F4EAFCBA1F369E71007B7506 /* ExtractKanMusu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExtractKanMusu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EAFCBD1F369E71007B7506 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4EAFCBF1F369E71007B7506 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,11 +38,7 @@
 		F4EAFCC41F369E71007B7506 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F4EAFCC61F369E71007B7506 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4EAFCCC1F36A28B007B7506 /* pickup.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = pickup.rb; sourceTree = "<group>"; };
-		F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickUpSWF.swift; sourceTree = "<group>"; };
-		F4EAFCD21F36D6C2007B7506 /* KanColleGraphicDivider */ = {isa = PBXFileReference; lastKnownFileType = text; name = KanColleGraphicDivider; path = KanColleGraphicDivider/build/Debug/KanColleGraphicDivider; sourceTree = "<group>"; };
-		F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = KanColleGraphicDivider; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KanColleGraphicDivider.xcodeproj; path = KanColleGraphicDivider/KanColleGraphicDivider.xcodeproj; sourceTree = "<group>"; };
-		F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtractKanmusu.swift; sourceTree = "<group>"; };
+		F4EAFCCE1F36B8FE007B7506 /* PickupPNG.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickupPNG.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +55,6 @@
 		F4EAFCB11F369E71007B7506 = {
 			isa = PBXGroup;
 			children = (
-				F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */,
-				F4EAFCD51F36D786007B7506 /* KanColleGraphicDivider */,
 				F4EAFCBC1F369E71007B7506 /* ExtractKanMusu */,
 				F4EAFCBB1F369E71007B7506 /* Products */,
 				F4EAFCD11F36D6C1007B7506 /* Frameworks */,
@@ -103,8 +80,8 @@
 				F41A44D51F3A09C30066F83D /* ProgressPanelController.xib */,
 				F41A44D11F39E1450066F83D /* ChuuChuu.swift */,
 				F4EAFCCC1F36A28B007B7506 /* pickup.rb */,
-				F4EAFCCE1F36B8FE007B7506 /* PickUpSWF.swift */,
-				F4EAFCDF1F36D9E5007B7506 /* ExtractKanmusu.swift */,
+				F4EAFCCE1F36B8FE007B7506 /* PickupPNG.swift */,
+				F473F0432129243800EAC987 /* PickupInformation.swift */,
 				F4EAFCC11F369E71007B7506 /* Assets.xcassets */,
 				F4EAFCC61F369E71007B7506 /* Info.plist */,
 				F41A44DE1F3B2B7F0066F83D /* InfoPlist.strings */,
@@ -116,17 +93,8 @@
 		F4EAFCD11F36D6C1007B7506 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4EAFCD21F36D6C2007B7506 /* KanColleGraphicDivider */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F4EAFCD81F36D7C6007B7506 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F4EAFCDC1F36D7C7007B7506 /* KanColleGraphicDivider */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +111,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F4EAFCDE1F36D7D7007B7506 /* PBXTargetDependency */,
 			);
 			name = ExtractKanMusu;
 			productName = ExtractKanMusu;
@@ -177,12 +144,6 @@
 			mainGroup = F4EAFCB11F369E71007B7506;
 			productRefGroup = F4EAFCBB1F369E71007B7506 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = F4EAFCD81F36D7C6007B7506 /* Products */;
-					ProjectRef = F4EAFCD71F36D7C6007B7506 /* KanColleGraphicDivider.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				F4EAFCB91F369E71007B7506 /* ExtractKanMusu */,
@@ -190,22 +151,11 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		F4EAFCDC1F36D7C7007B7506 /* KanColleGraphicDivider */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = KanColleGraphicDivider;
-			remoteRef = F4EAFCDB1F36D7C7007B7506 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		F4EAFCB81F369E71007B7506 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4EAFCD61F36D786007B7506 /* KanColleGraphicDivider in Resources */,
 				F41A44DC1F3B2B7F0066F83D /* InfoPlist.strings in Resources */,
 				F4EAFCCD1F36A28C007B7506 /* pickup.rb in Resources */,
 				F4EAFCC21F369E71007B7506 /* Assets.xcassets in Resources */,
@@ -224,8 +174,8 @@
 			files = (
 				F41A44CE1F38B8510066F83D /* ApplicationDirecrories.swift in Sources */,
 				F4EAFCC01F369E71007B7506 /* ViewController.swift in Sources */,
-				F4EAFCCF1F36B8FE007B7506 /* PickUpSWF.swift in Sources */,
-				F4EAFCE01F36D9E5007B7506 /* ExtractKanmusu.swift in Sources */,
+				F4EAFCCF1F36B8FE007B7506 /* PickupPNG.swift in Sources */,
+				F473F0442129243800EAC987 /* PickupInformation.swift in Sources */,
 				F41A44D21F39E1450066F83D /* ChuuChuu.swift in Sources */,
 				F4EAFCBE1F369E71007B7506 /* AppDelegate.swift in Sources */,
 				F41A44C81F3710D10066F83D /* ProgressPanelController.swift in Sources */,
@@ -233,14 +183,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F4EAFCDE1F36D7D7007B7506 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KanColleGraphicDivider;
-			targetProxy = F4EAFCDD1F36D7D7007B7506 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F41A44D51F3A09C30066F83D /* ProgressPanelController.xib */ = {

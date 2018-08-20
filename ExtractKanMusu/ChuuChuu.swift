@@ -18,9 +18,16 @@ protocol MessageObserver: class {
     func increse()
 }
 
+private enum  ImageType: String {
+    
+    case full
+    
+    case full_dmg
+}
+
 class ChuuChuu {
     
-    static let chuchu = "ちゅーちゅー"
+    static let chuchu = "ちゅーちゅー2"
     static let tempDirName = "___temp_chu-chu-_ship___"
     
     let observer: MessageObserver
@@ -42,23 +49,6 @@ class ChuuChuu {
         destinationDir = destination
     }
     
-    
-    private func createTempDir() throws {
-        
-        let tempURL = originalDir.appendingPathComponent(ChuuChuu.tempDirName)
-        
-        try FileManager.default
-            .createDirectory(at: tempURL, withIntermediateDirectories: true, attributes: nil)
-        
-    }
-    
-    private func deleteTempDir() throws {
-        
-        let tempURL = originalDir.appendingPathComponent(ChuuChuu.tempDirName)
-        
-        try FileManager.default.removeItem(at: tempURL)
-    }
-    
     private func createDestDir() throws {
         
         let destURL = destinationDir.appendingPathComponent(ChuuChuu.chuchu)
@@ -68,66 +58,78 @@ class ChuuChuu {
         
     }
     
-    private func moveSWF(from originalDir: URL, to destinationDir: URL) {
+    private func movePNG(from originalDir: URL, to destinationDir: URL) {
         
-        observer.message = "Picking up SWF file from Cache Directory."
+        observer.message = "Checking Cache Directory."
         
         do {
             
-            try pickUpSWF(from: originalDir, to: destinationDir)
+            let informations = try getPickUpInformations(from: originalDir)
             
-        } catch {
+            observer.message = "Picking up PNG file from Cache Directory."
             
-            print("Can not pickup.", terminator: " : ")
+            observer.count = informations.count
             
-            guard let error = error as? PickUPSWFError else {
-                
-                print("Unkown error.")
-                return
+            let fm = FileManager.default
+            
+            try informations
+                .compactMap { info -> (URL, URL)? in
+                    
+                    observer.increse()
+                    
+                    let url = info.url
+                    let name = url.deletingPathExtension().lastPathComponent
+                    guard let type = url.deletingPathExtension().pathComponents.dropLast().last else { return nil }
+                    guard let _ = ImageType(rawValue: type) else { return nil }
+                    guard let id = Int(name.prefix(4)), id < 1500 else { return nil }
+                    
+                    let destFilename: String
+                    if let query = url.query {
+                        
+                        destFilename = type + "-" + name + "_" + query
+                        
+                    } else {
+                        
+                        destFilename = type + "-" + name
+                    }
+                    
+                    let destination = destinationDir
+                        .appendingPathComponent(ChuuChuu.chuchu)
+                        .appendingPathComponent(destFilename)
+                        .appendingPathExtension("png")
+                    
+                    let original = originalDir
+                        .appendingPathComponent("fsCachedData")
+                        .appendingPathComponent(info.filename)
+                    
+                    return (destination, original)
+                    
+                }
+                .filter { destination, _ in
+                    
+                    (try? !destination.checkResourceIsReachable()) ?? true
+                    
+                }
+                .forEach { destination, original in
+                    
+                    try fm.copyItem(at: original, to: destination)
             }
+            
+        } catch let error as PickupPNGError {
             
             switch error {
             case .scriptNotFound: print("Script not found.")
                 
             case let .commandFail(status): print("Command faile status \(status).")
             }
+            
+        } catch {
+            
+            print("Can not pickup.", terminator: " : ")
+            
+            print("Unkown error.", error)
         }
     }
-    
-    private func extractKanmusus(swfs: [URL], to destURL: URL) {
-        
-        observer.message = "Extracting KanMusu Image from SWF file."
-        
-        let semaphone = DispatchSemaphore(value: useCoreCount)
-        let group = DispatchGroup()
-        let queue = DispatchQueue(label: "extract", attributes: .concurrent)
-        
-        swfs.forEach { swf in
-            
-            queue.async(group: group) {
-                
-                semaphone.wait()
-                
-                do {
-                    
-                    try extractKanmusu(swf: swf, to: destURL)
-                    
-                } catch {
-                    
-                    print(error)
-                }
-                
-                semaphone.signal()
-                
-                self.observer.increse()
-                
-            }
-            
-        }
-        
-        group.wait()
-    }
-    
     
     func execute(maxPower: Bool, completeHandler: @escaping () -> Void) {
         
@@ -152,23 +154,9 @@ class ChuuChuu {
             
             do {
                 
-                try self.createTempDir()
                 try self.createDestDir()
                 
-                self.moveSWF(from: self.originalDir, to: self.destinationDir)
-                
-                let tempURL = self.originalDir.appendingPathComponent(ChuuChuu.tempDirName)
-                let destURL = self.destinationDir.appendingPathComponent(ChuuChuu.chuchu)
-                
-                let swfs = try FileManager.default
-                    .contentsOfDirectory(at: tempURL, includingPropertiesForKeys: nil)
-                    .filter { $0.pathExtension.lowercased() == "swf" }
-                
-                self.observer.count = swfs.count
-                
-                self.extractKanmusus(swfs: swfs, to: destURL)
-                
-                try self.deleteTempDir()
+                self.movePNG(from: self.originalDir, to: self.destinationDir)
                 
             } catch {
                 
